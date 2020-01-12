@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ToDoList from './Pages/ToDoList' 
 import './App.css';
 
