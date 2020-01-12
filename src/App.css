@@ -6,7 +6,8 @@
 
 .myUL {
     width: 300px;
-    margin: 30px auto;
+    margin: auto;
+    margin-bottom: 10px;
     list-style-type: none;
     padding: 0;
 }
@@ -24,9 +25,29 @@ li {
 }
 
 .btn {
-    display: none
+    visibility: hidden;
+    color: red;
+    /* font-weight: bold; */
 }
 
 li:hover .btn {
-    display: block;
+    visibility: visible;
+    color: red;
+    font-weight: bold;
+}
+
+li:nth-child(even) {
+    background-color: lightcyan;
+}
+
+.myCheck {
+    margin: 0 20px;
+}
+
+.lastRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto;
 }

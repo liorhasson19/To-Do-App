@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Jumbotron } from 'react-bootstrap'
+import { Jumbotron } from 'react-bootstrap'
 import List from '../Components/List'
 
 export default class ToDoList extends Component {
@@ -19,9 +19,7 @@ export default class ToDoList extends Component {
                 <Jumbotron>
                     <h1>ToDos</h1>
                 </Jumbotron>
-                <Container>
                     <List/>
-                </Container>
             </div>
                 )
             }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Form } from 'react-bootstrap'
+// import { Row, Button } from 'react-bootstrap'
 
 export default class List extends Component {
 
@@ -13,6 +13,8 @@ export default class List extends Component {
 
         this.onChangeHandler = this.onChangeHandler.bind(this);
         this.addTask = this.addTask.bind(this);
+        this.isChecked = this.isChecked.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
 
     }
 
@@ -26,18 +28,18 @@ export default class List extends Component {
 
     addTask(event) {
         const { input } = this.state
-        console.log(input)
+        // console.log(input)
         if (event.keyCode === 13) {
             event.preventDefault();
             this.setState({
                 list: this.state.list.concat(input),
                 input: ""
             });
-            console.log(this.state.list)
+            // console.log(this.state.list)
         }
     }
 
-    myFunction() {
+    isChecked() {
         // Get the checkbox
         const checkBox = document.getElementById("myCheck");
         // Get the output text
@@ -51,14 +53,18 @@ export default class List extends Component {
         }
     }
 
+    deleteItem() {
+        alert("button is pressed");
+    }
+
     render() {
         const { input, list } = this.state;
 
         const listItems = list.map((item) =>
-            <li key={"item-" + item} value={item}><input type="checkbox" id="myCheck" onClick="myFunction()">
-            </input>{item}<button className="btn">x</button></li>
+            <li key={"item-" + item} value={item}><input type="checkbox" id="myCheck" onClick="isChecked()">
+            </input>{item}<button className="btn" onClick="deleteItem()">x</button></li>
         );
-        console.log(listItems);
+        // console.log(listItems);
 
         return (
             <div>
@@ -67,6 +73,17 @@ export default class List extends Component {
                 < ul className="myUL">
                     {listItems}
                 </ul >
+                <div className="lastRow">
+                    <div>
+                        x items left
+                    </div>
+                    <div className="btns">
+                        <button>All</button>
+                        <button>Active</button>
+                        <button>Completed</button>
+
+                    </div>
+                </div>
             </div >
         )
     }
